@@ -1,0 +1,39 @@
+﻿@model AddEditViewModel
+
+
+<!-- ======= Breadcrumbs ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Edit Page</h2>
+        </div>
+    </div>
+</section><!-- End Breadcrumbs -->
+
+<form method="post" enctype="multipart/form-data" style="margin:50px">
+    <input type="hidden" asp-for="Id" />
+    <dl class="dl-horizontal">
+        <dd><label asp-for="Name"></label></dd>
+        <dt>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </dt>
+        <dd><label asp-for="Note"></label></dd>
+        <dt>
+            <textarea asp-for="Note" class="form-control"></textarea>
+            <span asp-validation-for="Note"></span>
+        </dt>
+        <dd><label asp-for="Picture"></label></dd>
+        <dt>
+            <input asp-for="Picture" />
+            <span asp-validation-for="Picture"></span>
+        </dt>
+        <dt>
+           <br />
+           <input type="submit" class="btn btn-success" value="Submit" />
+        </dt>
+    </dl>
+
+
+
+</form>

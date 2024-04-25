@@ -1,0 +1,33 @@
+﻿@model Dean_Resume.Models.Product
+
+<!-- ======= Breadcrumbs ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Delete Page</h2>
+        </div>
+    </div>
+</section><!-- End Breadcrumbs -->
+
+<form method="post" asp-action="Delete" style="margin:50px">
+    <dl class="dl-horizontal">
+        <dd><label asp-for="@Model.Name"></label></dd>
+        <dt>
+            <input asp-for="@Model.Name" class="form-control" readonly />
+            <span asp-validation-for="@Model.Name"></span>
+        </dt>
+        <dd><label asp-for="@Model.Note"></label></dd>
+        <dt>
+            <textarea asp-for="@Model.Note" class="form-control" readonly></textarea>
+            <span asp-validation-for="@Model.Note"></span>
+        </dt>
+
+        <dd><label>تصویر</label></dd>
+        <dt>
+            <img src="/images/@(Model.ProductId).jpg" style="max-width: 200px" />
+        </dt>
+
+        <input type="hidden" asp-for="ProductId" />
+        <input type="submit" class="btn btn-danger" value="Delete" />
+    </dl>
+</form>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Dean_Resume.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- ======= My Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+
+        <div class="section-title">
+            <span>My Portfolio</span>
+            <h2>My Portfolio</h2>
+            <p>Moments that capture your heart!</p>
+        </div>
+
+
+        <div class="row portfolio-container">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-img"><img src="assets/img/portfolio/@(item.ProductId).jpg" class="img-fluid" alt=""></div>
+                    <div class="portfolio-info">
+                        <h4>@item.Name</h4>
+                        <p>@item.Note</p>
+                        <a href="assets/img/portfolio/@(item.ProductId).jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="@item.Name"><i class="bx bx-plus"></i></a>
+                        @*<a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>*@
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</section><!-- End My Portfolio Section -->
